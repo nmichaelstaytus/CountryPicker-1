@@ -123,11 +123,12 @@ extension CountryPickerView: UIPickerViewDelegate {
             reuseableView = ComponentView(frame: rect)
         }
         
+        guard row >= 0, row < pickList.count else { return reuseableView ?? UIView() }
         let country = pickList[row]
         reuseableView?.imageView.image = country.flag
         reuseableView?.countryNameLabel.text = country.countryName
         reuseableView?.diallingCodeLabel.text = country.dialingCode
-        
+
         return reuseableView!
     }
     
@@ -136,6 +137,7 @@ extension CountryPickerView: UIPickerViewDelegate {
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard row >= 0, row < pickList.count else { return }
         let country = pickList[row]
         didSelectCountryCallback?(country)
     }
