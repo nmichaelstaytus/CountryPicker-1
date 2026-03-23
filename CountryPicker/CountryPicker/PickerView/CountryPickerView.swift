@@ -84,10 +84,6 @@ open class CountryPickerView: UIPickerView {
     }
 
     // ISO 3166-1 alpha-2 two-letter country codes.
-    public func setPickList(codes: String...) {
-        self.countryCodes = codes
-    }
-
     public func setPickList(codes: [String]) {
         self.countryCodes = codes
     }
