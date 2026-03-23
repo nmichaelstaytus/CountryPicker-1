@@ -87,6 +87,10 @@ open class CountryPickerView: UIPickerView {
     public func setPickList(codes: String...) {
         self.countryCodes = codes
     }
+
+    public func setPickList(codes: [String]) {
+        self.countryCodes = codes
+    }
     
     public func setSelectedCountry(_ selectedCountry: Country?) {
         self.selectedCountry = selectedCountry
